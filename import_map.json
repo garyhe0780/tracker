@@ -1,0 +1,19 @@
+{
+  "imports": {
+    "$fresh/": "https://deno.land/x/fresh@1.1.2/",
+    "preact": "https://esm.sh/preact@10.11.2",
+    "preact/": "https://esm.sh/preact@10.11.2/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@5.2.6",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.1.2",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.2.2",
+    "twind": "https://esm.sh/twind@0.16.17",
+    "twind/": "https://esm.sh/twind@0.16.17/",
+    "@trpc/server": "https://esm.sh/*@trpc/server@10.0.0-proxy-beta.26",
+    "@trpc/server/": "https://esm.sh/*@trpc/server@10.0.0-proxy-beta.26/",
+    "@trpc/client": "https://esm.sh/*@trpc/client@10.0.0-proxy-beta.26",
+    "@trpc/client/": "https://esm.sh/@trpc/client@10.0.0-proxy-beta.26/",
+    "zod": "https://deno.land/x/zod@v3.19.1/mod.ts",
+    "$std/": "https://deno.land/std@0.165.0/",
+    "supabase": "https://esm.sh/@supabase/supabase-js@2.1.0"
+  }
+}
