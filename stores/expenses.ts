@@ -6,7 +6,7 @@ export const expenses$ = signal<Expense[]>([]);
 
 if (IS_BROWSER) {
 	// initial value
-  expenses$.value = JSON.parse(localStorage.getItem("list") || "[]");
+  expenses$.value = JSON.parse(localStorage.getItem("list") || "[]").reverse();
 
   effect(() => {
     localStorage.setItem("list", JSON.stringify(expenses$.value));
