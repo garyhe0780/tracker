@@ -41,7 +41,7 @@ export function Expense(props: IGroupData) {
   }
 
   return (
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4 h-auto">
       <div class="flex justify-between items-center dark:text-gray-400 px-2">
         <span>{getLabel(label)}</span>
         <span>¥{total}</span>

@@ -5,7 +5,7 @@ import ExpenseList from '../islands/ExpenseList.tsx'
 
 export default function Home() {
   return (
-    <div class="flex gap-4 bg-white dark:bg-gray-900 min-w-screen min-h-screen">
+    <div class="flex gap-4 bg-white dark:bg-gray-900 w-screen h-screen">
       <Head>
         <title>Expense Track App</title>
       </Head>
@@ -25,7 +25,9 @@ function Content() {
         </p>
       </div>
       <ExpenseInput />
-      <ExpenseList />
+      <div class="overflow-hidden overflow-y-auto">
+        <ExpenseList />
+      </div>
     </main>
   )
 }
