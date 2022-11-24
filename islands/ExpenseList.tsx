@@ -2,10 +2,11 @@ import { groupBy } from '$std/collections/mod.ts'
 import { format } from '$std/datetime/mod.ts'
 import { expenses$ } from '../stores/expenses.ts'
 import { Expense } from '../types/expense.ts'
+import { isToday, isYesterday } from '../utils/date.ts'
 
 export default function ExpenseList() {
   const groupData = groupBy<Expense, string>(expenses$.value, (e) =>
-    format(new Date(e.time), 'dd-MM-yyyy'),
+    format(new Date(e.time), 'yyyy-MM-dd'),
   )
 
   return (
@@ -32,10 +33,17 @@ export function Expense(props: IGroupData) {
   const { label, value } = props
   const total = value.reduce((acc, cur) => (acc += cur.number), 0)
 
+  const getLabel = (label: string) => {
+    if (isToday(label)) return 'TODAY';
+    if (isYesterday(label)) return 'YESTERDAY';
+
+    return label;
+  }
+
   return (
     <div class="flex flex-col gap-4">
       <div class="flex justify-between items-center dark:text-gray-400 px-2">
-        <span>{label}</span>
+        <span>{getLabel(label)}</span>
         <span>¥{total}</span>
       </div>
       <ul class="flex flex-col gap-3">
