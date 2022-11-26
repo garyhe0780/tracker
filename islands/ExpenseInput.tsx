@@ -1,11 +1,14 @@
 import { useRef } from 'preact/hooks'
+import { debounce } from '$std/async/debounce.ts'
 import { expenses$ } from '../stores/expenses.ts'
+
 
 export default function ExpenseInput() {
   const text$ = useRef<HTMLInputElement>(null)
   const number$ = useRef<HTMLInputElement>(null)
 
-  const handleKeyPressed = (e: any) => {
+  const handleKeyPressed = debounce((e: any) => {
+    console.log(e);
     if (e.key === 'Enter') {
       expenses$.value = [
         ...expenses$.value,
@@ -16,7 +19,7 @@ export default function ExpenseInput() {
         },
       ]
     }
-  }
+  }, 250);
 
   return (
     <div class="dark:text-white mb-12">
