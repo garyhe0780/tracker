@@ -8,7 +8,6 @@ export default function ExpenseInput() {
   const number$ = useRef<HTMLInputElement>(null)
 
   const handleKeyPressed = debounce((e: any) => {
-    console.log(e);
     if (e.key === 'Enter') {
       expenses$.value = [
         ...expenses$.value,
