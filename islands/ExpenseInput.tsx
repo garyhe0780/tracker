@@ -21,7 +21,7 @@ export default function ExpenseInput() {
   }, 250);
 
   return (
-    <div class="dark:text-white mb-12">
+    <div class="dark:text-white m-0 lg:mb-12 fixed lg:relative bottom-0 left-0 right-0">
       <div class="px-4 py-2 border-1 border-gray-700 rounded-lg text-md flex">
         <input
           ref={text$}

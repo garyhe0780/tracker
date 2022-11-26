@@ -1,6 +1,6 @@
 export default function Sidebar() {
   return (
-    <aside class="flex p-4 h-screen w-sidebar">
+    <aside class="hidden lg:flex p-4 h-screen w-sidebar">
       <nav class="bg:gray-300 dark:bg-gray-700 flex flex-col gap-3 flex-1 rounded-lg">
         <ul class="flex flex-col flex-1 px-4 py-16 gap-2">
           <li class="flex px-4">
