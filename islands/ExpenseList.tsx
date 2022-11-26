@@ -5,7 +5,7 @@ import { Expense } from '../types/expense.ts'
 import { isToday, isYesterday } from '../utils/date.ts'
 
 export default function ExpenseList() {
-  const groupData = groupBy<Expense, string>(expenses$.value.toReversed(), (e) =>
+  const groupData = groupBy<Expense, string>([...expenses$.value].reverse(), (e) =>
     format(new Date(e.time), 'yyyy-MM-dd'),
   )
 
